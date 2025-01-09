@@ -9,6 +9,27 @@
 #### **criar pasta src**
 #### **criar .gitignore**
 
+# Configurar sequelize:
+#### Criar um arquivo **.sequelizerc** na raiz do projeto. criar o caminho para as seguintes pastas:
+    - "config"
+    - "models-path"
+    - "seeders-path"
+    - "migrations-path"
+rodar o comando para inicializar as pastas:
+    **npx sequelize-cli init**
+**OBS: utilizar resolve, module.exports.**
+
+### config/ :
+- #### criar um arquivo com as configurações do banco de dados usando o .env: 
+    username, password, database, host, port, dialect. 
+
+### npx sequelize-cli db:create - criar o banco
+
+### src/database:
+- #### criar um arquivo index.ts que terá uma instância do sequelize que recebe como argumento: database, user, password. E um objeto: host, dialect, define: underscore: true.
+
+**OBS:** adicionar sequelize.authenticate() no server.listen para verificar se houve sucesso na conexão.
+
 
 # Backend
 
