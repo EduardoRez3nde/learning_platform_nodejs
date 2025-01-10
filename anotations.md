@@ -1,14 +1,15 @@
-# configurar projeto:
-### 
-#### **npm init -y**
-#### **npm install -D typescript**
-#### **npm install -D @types/node**
-#### **npx tsc --init**
-#### **npx tsc** - compilar
-#### **node dist/index.js** - Executar
-#### **criar pasta src**
-#### **criar .gitignore**
+# Configurar projeto: 
+```bash
+npm init -y
+npm install -D typescript
+npm install -D @types/node
+npx tsc --init
+npx tsc - compilar
+node dist/index.js - Executar
 
+criar pasta src
+criar .gitignore
+```
 # Configurar sequelize:
 #### Criar um arquivo **.sequelizerc** na raiz do projeto. criar o caminho para as seguintes pastas:
     - "config"
@@ -20,7 +21,7 @@ rodar o comando para inicializar as pastas:
 **OBS: utilizar resolve, module.exports.**
 
 ### config/ :
-- #### criar um arquivo com as configurações do banco de dados usando o .env: 
+- #### criar um arquivo com as configurações do banco de dados usando o .env em um objeto: 
     username, password, database, host, port, dialect. 
 
 ### npx sequelize-cli db:create - criar o banco
@@ -29,6 +30,15 @@ rodar o comando para inicializar as pastas:
 - #### criar um arquivo index.ts que terá uma instância do sequelize que recebe como argumento: database, user, password. E um objeto: host, dialect, define: underscore: true.
 
 **OBS:** adicionar sequelize.authenticate() no server.listen para verificar se houve sucesso na conexão.
+
+# Configurando Adminjs
+### src/adminjs/index:
+- #### 1 registrar o adaptador, no caso, o sequelize.
+- #### 2 cria uma instância do Adminjs
+- #### 3 passar um objeto como argumento com as propriedades:
+    - #### database, rootPath, branding (visual)
+- #### 4 Exportar uma instancia do adminJsRouter (constroi as rotas para ser usado no server)
+- #### 5 passar o caminho e a rota no server
 
 
 # Backend
