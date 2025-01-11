@@ -40,6 +40,10 @@ rodar o comando para inicializar as pastas:
 - #### 4 Exportar uma instancia do adminJsRouter (constroi as rotas para ser usado no server)
 - #### 5 passar o caminho e a rota no server
 
+# Resources
+#### 1- utilizar sequelize-cli model:generate para gerar um novo modelo. 
+#### 2- Utilizar o comando sequelize-cli db:migrate atualiza a estrutura no banco de dados definidas no migration.
+#### 3- 
 
 # Backend
 
