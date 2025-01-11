@@ -14,6 +14,7 @@ export const CourseModel = (sequelize: Sequelize) => {
 
     static associate(models: any) {
       Course.belongsTo(models.Category);
+      Course.hasMany(models.Episode);
     }
   }
   Course.init(
