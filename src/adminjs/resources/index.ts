@@ -1,12 +1,17 @@
 import { ResourceWithOptions } from "adminjs";
-import { category } from "../../models/initializerModels/initializerModels.js";
+import { Category, Course } from "../../models/initializerModels/initializerModels.js";
 import { CategoryResource } from "./category.js";
+import { CourseResource } from "./course.js";
 
 
 export const AdminJsResources: ResourceWithOptions[] = [
 
     {
-        resource: category,
+        resource: Category,
         options: CategoryResource
     },
+    {
+        resource: Course,
+        options: CourseResource
+    }
 ];
