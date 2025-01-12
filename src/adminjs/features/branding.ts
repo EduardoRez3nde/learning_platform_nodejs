@@ -2,7 +2,7 @@ import { BrandingOptions } from "adminjs";
 
 const brandingOptions: BrandingOptions = {
   companyName: "learning",
-  logo: "pngwing.com.png",
+  logo: "http://localhost:3000/pngwing.com.png",
   theme: {
     colors: {
       primary100: "#ff0043",

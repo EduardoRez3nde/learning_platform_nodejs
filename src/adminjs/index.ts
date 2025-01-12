@@ -4,6 +4,7 @@ import { sequelize } from "../database/index.js";
 import brandingOptions from "./features/branding.js";
 import AdminJSExpress from "@adminjs/express";
 import { AdminJsResources } from "./resources/index.js";
+import { authenticateOptions } from "./features/authentication.js";
 
 
 AdminJs.registerAdapter(AdminJSSequelize);
@@ -15,4 +16,13 @@ export const Adminjs = new AdminJS({
     branding: brandingOptions
 });
 
-export const adminRouter = AdminJSExpress.buildRouter(Adminjs);
+export const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
+    Adminjs, 
+    authenticateOptions,
+    null,
+    {
+        secret: "test",
+        resave: false,
+        saveUninitialized: true
+    }
+);
