@@ -5,6 +5,9 @@ import brandingOptions from "./features/branding.js";
 import AdminJSExpress from "@adminjs/express";
 import { AdminJsResources } from "./resources/index.js";
 import { authenticateOptions } from "./features/authentication.js";
+import { locale } from "./locale.js";
+import { Components, componentLoader } from "./componentLoader.js";
+import { dashboardHandler } from "./handlers/dashboard.js";
 
 
 AdminJs.registerAdapter(AdminJSSequelize);
@@ -13,7 +16,13 @@ export const Adminjs = new AdminJS({
     databases: [sequelize],
     rootPath: "/admin",
     resources: AdminJsResources,
-    branding: brandingOptions
+    branding: brandingOptions,
+    locale: locale,
+    dashboard: {
+        component: Components.Dashboard,
+        handler: dashboardHandler
+    },
+    componentLoader
 });
 
 export const adminRouter = AdminJSExpress.buildAuthenticatedRouter(
