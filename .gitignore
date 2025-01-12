@@ -1,4 +1,5 @@
 node_modules/
 .vscode/
 dist/
+public/thumbnails
 learning_platform_nodejs/anotations.md
