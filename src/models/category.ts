@@ -9,9 +9,6 @@ export const CategoryModel = (sequelize: Sequelize) => {
     declare name: string;
     declare position: number;
 
-    static associate(models:any) {
-      Category.hasMany(models.Course);
-    }
   }
   Category.init(
     {

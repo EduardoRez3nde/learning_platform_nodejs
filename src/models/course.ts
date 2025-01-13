@@ -10,14 +10,8 @@ export const CourseModel = (sequelize: Sequelize) => {
     declare synopsis: string;
     declare thumbnailUrl: string;
     declare featured: boolean;
-    declare categoryId: number;
+    declare categoryId: number; 
 
-    static associate(models: any) {
-      Course.belongsTo(models.Category, {
-        foreignKey: "category_id"
-      });
-      Course.hasMany(models.Episode);
-    }
   }
   Course.init(
   {
