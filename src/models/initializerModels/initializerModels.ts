@@ -12,6 +12,9 @@ const User = UserModel(sequelize);
 
 Category.hasMany(Course, { as: "courses" });
 
-Course.belongsTo(Category);
+Course.belongsTo(Category, { as: "category" });
+Course.hasMany(Episode, { as: "episodes" });
+
+Episode.belongsTo(Course);
 
 export { Category, Course, Episode, User };
